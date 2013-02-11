@@ -29,6 +29,16 @@ $ python setup.py config_fc --arch="-march=x86-64" build
 # python setup.py install
 
 
+For users of pythonxy:
+some compiling problems might be solved by following the
+instructions at [1] (allthoug compiling lapack might not be necessary; downloading from [2]
+and copying the files to the right places (*.lib ->mingw32_dir, *.dll ->python_dir/dlls) should be sufficient).
+
+[1] https://groups.google.com/forum/?fromgroups=#!topic/pythonxy/Ktvs5vXEzMc
+[2] http://icl.cs.utk.edu/lapack-for-windows/lapack/#libraries_mingw
+
+
+
 To-Do:
 ------
  
