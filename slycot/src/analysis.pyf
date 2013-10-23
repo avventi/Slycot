@@ -206,7 +206,7 @@ subroutine ab09ad(dico,job,equil,ordsel,n,m,p,nr,a,lda,b,ldb,c,ldc,hsv,tol,iwork
     integer intent(out) :: iwarn
     integer intent(out) :: info
 end subroutine ab09ad
-subroutine ab09bd(dico,job,equil,ordsel,n,m,p,nr,a,lda,b,ldb,c,ldc,hsv,tol,iwork,dwork,ldwork,iwarn,info) !in :balred:AB09BD.f
+subroutine ab09bd(dico,job,equil,ordsel,n,m,p,nr,a,lda,b,ldb,c,ldc,hsv,tol1,tol2,iwork,dwork,ldwork,iwarn,info) !in :balred:AB09BD.f
     character intent(in) :: dico
     character intent(in) :: job
     character intent(in) :: equil
