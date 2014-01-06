@@ -9,8 +9,8 @@ from slycot.analysis import ab01nd,ab05md,ab05nd,ab07nd,ab08nd, ab09ad
 
 # Identification routines (0/5 wrapped)
 
-# Mathematical routines (1/81 wrapped)
-from slycot.math import mc01td
+# Mathematical routines (4/81 wrapped)
+from slycot.math import mc01td, mb03vd, mb03vy, mb03wd
 
 # Synthesis routines (11/50 wrapped)
 from slycot.synthesis import sb01bd,sb02md,sb02mt,sb02od,sb03md,sb04md,sb04qd,sb10ad,sb10hd,sg03ad,sg02ad
