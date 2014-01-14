@@ -8,3 +8,46 @@ subroutine mc01td(dico,dp,p,stable,nz,dwork,iwarn,info) ! in :new:MC01TD.f
 	integer intent(out) :: iwarn
 	integer intent(out) :: info
 end subroutine mc01td
+
+subroutine mb03vd(n,p,ilo,ihi,a,lda1,lda2,tau,ldtau,dwork,info) ! in :new:MB03VD.f
+  integer intent(in) :: n, p ,ilo, ihi, lda1,lda2, ldtau
+
+  double precision intent(in,out,copy),dimension(lda1,lda2,p),depend(lda1,lda2,p) :: a
+	double precision intent(cache,hide),dimension(n),depend(n) :: dwork
+	
+	double precision intent(out),dimension(ldtau,p),depend(ldtau,p) :: tau
+	
+	integer intent(out) :: info
+	
+end subroutine mb03vd
+
+subroutine mb03vy( n, p, ilo, ihi, a, lda1, lda2, tau, ldtau, dwork, ldwork, info ) ! in :new:MB03VY.f
+
+  integer intent(in):: n, p, ihi, ilo, lda1, lda2, ldwork, ldtau
+ 
+  double precision intent(in,out,copy),dimension(lda1,lda2,p),depend(lda1,lda2,p) :: a
+  
+  double precision intent(cache,hide),dimension(ldwork),depend(ldwork) :: dwork
+  double precision intent(in),dimension(ldtau,p),depend(ldtau,p) :: tau
+  
+  integer intent(out) :: info
+  	
+end subroutine mb03vy
+
+
+subroutine mb03wd( job, compz, n, p, ilo, ihi, iloz, ihiz, h, ldh1, ldh2, z, ldz1, ldz2, wr, wi, dwork, ldwork, info ) ! in :new:MB03WD.f
+  character intent(in):: job, compz
+  
+  integer intent(in):: n, p, ihi, ilo, ihiz, iloz, ldh1, ldh2, ldz1, ldz2, ldwork
+  
+  double precision intent(in,out,copy),dimension(ldh1,ldh2,p),depend(ldh1,ldh2,p) :: h
+  double precision intent(in,out,copy),dimension(ldz1,ldz2,p),depend(ldz1,ldz2,p) :: z
+  
+  double precision intent(out),dimension(n),depend(n) :: wr, wi
+  double precision intent(cache,hide),dimension(ldwork),depend(ldwork) :: dwork
+  
+  integer intent(out) :: info
+  	
+end subroutine mb03wd
+
+
