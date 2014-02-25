@@ -25,7 +25,7 @@ import os
 if __name__ == '__main__':
     from numpy.distutils.core import setup,Extension
     wrappers = Extension('_wrapper', 
-              libraries=['lapack'],
+              libraries=['lapack','blas'],
               sources=['slycot/src/_wrapper.pyf'] + glob(os.path.join('slycot','src','*.f')))
     setup(name = 'Slycot',
     	  author = 'Enrico Avventi',
