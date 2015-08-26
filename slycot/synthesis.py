@@ -949,7 +949,7 @@ def sb04qd(n,m,A,B,C,ldwork=None):
 
     To solve for X the discrete-time Sylvester equation
 
-        AXB + X + C = 0,
+        AXB + X = C,
 
     where A, B, C and X are general n-by-n, m-by-m, n-by-m and
     n-by-m matrices respectively. A Hessenberg-Schur method, which
