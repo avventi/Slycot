@@ -40,11 +40,13 @@ Operating System :: MacOS
 """
 
 MAJOR = 0
-MINOR = 1
-MICRO = 1
+MINOR = 2
+MICRO = 0
+POST = 0
 ISRELEASED = True
 VERSION = '%d.%d.%d' % (MAJOR, MINOR, MICRO)
-
+if POST != 0:
+    VERSION += '-post{:d}'.format(POST)
 
 # Return the git revision as a string
 def git_version():

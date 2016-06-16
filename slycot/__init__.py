@@ -3,6 +3,7 @@ try:
 except NameError:
     __SLYCOT_SETUP__ = False
 
+
 if __SLYCOT_SETUP__:
     import sys as _sys
     _sys.stderr.write('Running from numpy source directory.\n')
@@ -12,7 +13,8 @@ else:
     # import slycot.examples
 
     # Analysis routines (6/40 wrapped)
-    from .analysis import ab01nd,ab05md,ab05nd,ab07nd,ab08nd,ab09ad
+    from .analysis import ab01nd,ab05md,ab05nd,ab07nd,ab08nd, ab09ad, \
+                          ab09ax, ab09bd
 
     # Data analysis routines (0/7 wrapped)
 
