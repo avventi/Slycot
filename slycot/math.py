@@ -161,7 +161,7 @@ mb05nd(a.shape[0], a, 0.1)
 """
 
 def mb05nd(a, delta, tol=1e-7):
-    """F, H = mb05nd(n, a, delta, tol=1e-7)
+    """F, H = mb05nd(a, delta, tol=1e-7)
 
     To compute
 
