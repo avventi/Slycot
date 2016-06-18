@@ -25,13 +25,10 @@ def configuration(parent_package='', top_path=None):
         liblist = ['liblapack', 'libblas']
     else:
         liblist = ['lapack']
-    linkargs = (sys.platform == 'darwin' and 
-                [ '-undefined dynamic_lookup' ]) or []
 
     config.add_extension(
         name='_wrapper',
         libraries=liblist,
-        extra_link_args=linkargs,
         sources=fortran_sources + f2py_sources)
 
     config.make_config_py()  # installs __config__.py

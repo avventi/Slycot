@@ -11,12 +11,10 @@ requirements:
   build:
     - python
     - numpy
-    - lapack
 
   run:
     - python
     - numpy
-    - lapack
 
 test:
   imports:
