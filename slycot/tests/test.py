@@ -1,7 +1,7 @@
 import unittest
-from .. import synthesis
-from .. import math
-
+from slycot import synthesis
+from slycot import math
+from slycot import transform
 
 class Test(unittest.TestCase):
 
@@ -12,7 +12,7 @@ class Test(unittest.TestCase):
         synthesis.sb02mt(1,1,1,1)
 
     def test_2(self):
-        from scipy import matrix
+        from numpy import matrix
         a = matrix("-2 0.5;-1.6 -5")
         Ar, Vr, Yr, VALRr, VALDr = math.mb05md(a, 0.1)
 
@@ -48,3 +48,25 @@ class Test(unittest.TestCase):
         self.assertAlmostEqual(Ac[0][1], -1)
         self.assertAlmostEqual(Ac[1][0], 1)
         self.assertAlmostEqual(Ac[1][1], -3)
+
+    def test_td04ad_static(self):
+        """Regression: td04ad (TFM -> SS transformation) for static TFM"""
+        import numpy as np
+        from itertools import product
+        # 'C' fails on static TFs
+        for nout,nin,rc in product(range(1,6),range(1,6),['R']):
+            num = np.reshape(np.arange(nout*nin),(nout,nin,1))
+            if rc == 'R':
+                den = np.reshape(np.arange(1,1+nout),(nout,1))
+            else:
+                den = np.reshape(np.arange(1,1+nin),(nin,1))
+            index = np.tile([0],den.shape[0])
+            nr,a,b,c,d = transform.td04ad(rc,nin,nout,index,den,num)
+
+
+def suite():
+   return unittest.TestLoader().loadTestsFromTestCase(TestConvert)
+
+
+if __name__ == "__main__":
+    unittest.main()

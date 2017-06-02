@@ -1,11 +1,13 @@
 package:
   name: slycot
-  version: "0.2.0"
+  version: "0.3.2"
 
-source:
-  git_url: https://github.com/repagh/Slycot.git
-  git_tag: master
-#  md5: 125aac075d539d36004cc3baf3626bc7
+build:
+  number: 1
+
+  script:
+    - cd $RECIPE_DIR/..
+    - $PYTHON setup.py install
 
 requirements:
   build:
@@ -21,10 +23,6 @@ test:
     - slycot
 
 about:
-  home: https://pypi.python.org/pypi/slycot
-  license:  BSD License
+  home: https://github.com/python-control/Slycot
+  license:  GPLv2
   summary: 'A wrapper for the SLICOT control and systems library'
-
-# See
-# http://docs.continuum.io/conda/build.html for
-# more information about meta.yaml

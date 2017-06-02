@@ -22,6 +22,9 @@ if sys.version_info[0] >= 3:
 else:
     import __builtin__ as builtins
 
+# Fix a bug in python v3.4 installation
+if (sys.version_info[0:2] == (3,4)):
+    import importlib.machinery
 
 CLASSIFIERS = """\
 Development Status :: 3 - Alpha
@@ -40,10 +43,10 @@ Operating System :: MacOS
 """
 
 MAJOR = 0
-MINOR = 2
-MICRO = 0
+MINOR = 3
+MICRO = 2
 POST = 0
-ISRELEASED = True
+ISRELEASED = False
 VERSION = '%d.%d.%d' % (MAJOR, MINOR, MICRO)
 if POST != 0:
     VERSION += '-post{:d}'.format(POST)
@@ -190,15 +193,13 @@ def setup_package():
 
     metadata = dict(
         name='slycot',
-        maintainer="James Goppert",
-        maintainer_email="james.goppert@gmail.com",
+        maintainer="Slycot developers",
+        maintainer_email="python-control-discuss@lists.sourceforge.net",
         description=DOCLINES[0],
         long_description="\n".join(DOCLINES[2:]),
-        url='https://github.com/jgoppert/Slycot',
-        author='Enrico Avventi',
-        author_email='james.goppert@gmail.com',
-        download_url='https://github.com/jgoppert/Slycot',
-        license='BSD',
+        url='https://github.com/python-control/Slycot',
+        author='Enrico Avventi et al.',
+        license='GPLv2',
         classifiers=[_f for _f in CLASSIFIERS.split('\n') if _f],
         platforms=["Windows", "Linux", "Solaris", "Mac OS-X", "Unix"],
         cmdclass={"sdist": sdist_checked},
