@@ -150,7 +150,8 @@
 *> \ingroup doubleOTHERcomputational
 *
 *  =====================================================================
-      SUBROUTINE SLCT_DLATZM( SIDE, M, N, V, INCV, TAU, C1, C2, LDC, WORK )
+      SUBROUTINE SLCT_DLATZM( SIDE, M, N, V, INCV, TAU,
+     &                        C1, C2, LDC, WORK )
 *
 *  -- LAPACK computational routine (version 3.4.0) --
 *  -- LAPACK is a software package provided by Univ. of Tennessee,    --

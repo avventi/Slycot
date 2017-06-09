@@ -183,8 +183,8 @@ C     .. Local Scalars ..
       INTEGER           J, J0, JCUR, JKCUR, JMKCUR, KCUR, KK, KMIN,
      $                  KSTEP, MKCUR, NCONT
 C     .. External Subroutines ..
-      EXTERNAL          DCOPY, DGEMM, DLACPY, DLARFG, DLASET, SLCT_DLATZM,
-     $                  DTRSM, XERBLA
+      EXTERNAL          DCOPY, DGEMM, DLACPY, DLARFG, DLASET,
+     $                  SLCT_DLATZM, DTRSM, XERBLA
 C     .. Executable Statements ..
 C
       INFO = 0
@@ -291,7 +291,8 @@ C
                JCUR = JKCUR - KCUR
 C
                DO 60 J = 1, KCUR
-                  CALL SLCT_DLATZM( 'Left', KCUR+1, N-JCUR+1, F(1,JKCUR), 1,
+                  CALL SLCT_DLATZM( 'Left', KCUR+1, N-JCUR+1,
+     $                         F(1,JKCUR), 1,
      $                         DWORK(JKCUR), A(JKCUR,JCUR),
      $                         A(JCUR,JCUR), LDA, DWORK(N+1) )
                   JCUR = JCUR - 1

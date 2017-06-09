@@ -128,8 +128,8 @@ C     .. External Functions ..
       DOUBLE PRECISION  DLAPY2, DLAPY3
       EXTERNAL          DLAPY2, DLAPY3
 C     .. External Subroutines ..
-      EXTERNAL          DLARFG, DLASET, SLCT_DLATZM, DROTG, DTRTRI, MA02AD,
-     $                  MB04OX, SB03OY
+      EXTERNAL          DLARFG, DLASET, SLCT_DLATZM, DROTG, DTRTRI,
+     $                  MA02AD, MB04OX, SB03OY
 C     .. Intrinsic Functions ..
       INTRINSIC         ABS, SQRT
 C     .. Executable Statements ..
