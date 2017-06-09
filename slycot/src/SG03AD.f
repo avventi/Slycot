@@ -197,9 +197,9 @@ C
 C                    JOB        FACT    |  LDWORK
 C                    -------------------+-------------------
 C                    'X'        'F'     |  MAX(1,N)
-C                    'X'        'N'     |  MAX(1,4*N)
+C                    'X'        'N'     |  MAX(1,4*N,8*N+16)
 C                    'B', 'S'   'F'     |  MAX(1,2*N**2)
-C                    'B', 'S'   'N'     |  MAX(1,2*N**2,4*N)
+C                    'B', 'S'   'N'     |  MAX(1,2*N**2,4*N,8*N+16)
 C
 C             For optimum performance, LDWORK should be larger.
 C
@@ -443,13 +443,13 @@ C
             IF ( ISFACT ) THEN
                MINWRK = MAX( N, 1 )
             ELSE
-               MINWRK = MAX( 4*N, 1 )
+               MINWRK = MAX( 8*N+16, 1 )
             END IF
          ELSE
             IF ( ISFACT ) THEN
                MINWRK = MAX( 2*N*N, 1 )
             ELSE
-               MINWRK = MAX( 2*N*N, 4*N, 1 )
+               MINWRK = MAX( 2*N*N, 8*N+16, 1 )
             END IF
          END IF
          IF ( MINWRK .GT. LDWORK ) THEN
