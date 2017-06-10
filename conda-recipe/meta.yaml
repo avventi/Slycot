@@ -1,0 +1,36 @@
+package:
+  name: slycot
+  version: "0.3.2"
+
+build:
+  number: 5
+
+  script:
+    - cd $RECIPE_DIR/..
+    - LDFLAGS="-shared" FFLAGS=-fPIC $PYTHON setup.py install # [not win]
+
+requirements:
+  build:
+    - python
+    - numpy
+    - blas
+    - lapack
+
+  run:
+    - python
+    - numpy
+    - blas
+    - lapack
+
+test:
+  imports:
+    - slycot
+    
+source:
+  git_url: https://github.com/repagh/Slycot.git
+  git_rev: master
+  
+about:
+  home: https://github.com/python-control/Slycot
+  license:  GPLv2
+  summary: 'A wrapper for the SLICOT control and systems library'
