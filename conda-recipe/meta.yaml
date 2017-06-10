@@ -27,9 +27,8 @@ test:
     - slycot
     
 source:
-  #git_url: https://github.com/repagh/Slycot.git
-  #git_rev: master
-  path: ..
+  git_url: https://github.com/repagh/Slycot.git
+  git_rev: master
   
 about:
   home: https://github.com/python-control/Slycot
